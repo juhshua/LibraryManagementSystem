@@ -13,7 +13,7 @@ void Library::searchBooksByTitle(const string& title) const {
 }
 void Library::borrowBook(const string& isbn, Patron& patron) {
     for (auto& book : books) {
-        if (book.getISBN() == isbn && !book.isCheckedOut) {
+        if (book.getISBN() == isbn && !book.getIsCheckedOut()) {
             book.checkOut("2025-01-20");
             cout << "Book borrowed successfully!" << endl;
             return;
